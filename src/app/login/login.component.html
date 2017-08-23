@@ -1,0 +1,29 @@
+<div id="header">
+      <div id="logo"> <img src="../../assets/images/kiyanis.png" width="300" height="100">
+       </div>
+ </div>
+
+<div class="page-container">
+    <h1>ورود به سیستم</h1>
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+       <input type="text" name="username" class="username" placeholder="نام کاربری">
+       <input type="password" name="password" class="password" placeholder="رمز عبور">
+       <button type="submit">وارد شوید</button>
+       <button type="submit">رمز ورود را فراموش کردم</button>
+       <div class="error"><span>+</span></div>
+    </form>
+
+   <div class="connect">
+       <p>ورود سریع با شبکه های اجتماعی</p>
+       <p>
+           <a class="facebook" href=""></a>
+           <a class="twitter" href=""></a>
+       </p>
+   </div>
+</div>
+
+       <!-- Javascript -->
+       <script src="../../assets/js/jquery-1.8.2.min.js"></script>
+       <script src="../../assets/js/supersized.3.2.7.min.js"></script>
+       <script src="../../assets/js/supersized-init.js"></script>
+       <script src="../../assets/js/scripts.js"></script>
