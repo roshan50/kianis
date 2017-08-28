@@ -1,0 +1,15 @@
+
+
+      <div  *ngFor="let user of users">
+          <h2>پروفایل کاربر {{user.username}}  </h2>
+          <div>
+            <label>شناسه: </label>{{user.id}}</div>
+
+            <div>
+                <label>نام کاربری: </label>
+                <input [(ngModel)]="user.username" placeholder="username" />
+            </div>
+
+          <button (click)="goBack()" class="btn btn-primary submit-btn">بازگشت</button>
+          <button (click)="save()" class="btn btn-primary submit-btn">ذخیره</button>
+      </div>

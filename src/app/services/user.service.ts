@@ -7,14 +7,13 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { USER } from '../user';
+import { config } from '../config';
 
 @Injectable()
-export class UserService{//extends BehaviorSubject<GridDataResult>
+export class UserService{
     private headers = new Headers({'Content-Type': 'application/json'});
-    // private usersUrl = 'http://localhost:8080/users';  // URL to web api
-    private usersUrl = 'http://localhost:7002/api/users';
+    private usersUrl = config.apiUrl+'users';
     constructor(private http: Http) {
-      // super(null);
     }
 
     getUsers(): Promise<USER[]> {
@@ -37,12 +36,6 @@ export class UserService{//extends BehaviorSubject<GridDataResult>
       console.error('An error occurred', error); // for demo purposes only
       return Promise.reject(error.message || error);
     }
-
-    // getUsers(): Observable<USER[]> {
-    //   return this.http.get(this.usersUrl)
-    //              .map((res:Response) => res.json().Users);
-    //             //  .catch(this.handleError);
-    // }
 
     create(user: USER): Promise<USER> {
       console.log(user);
@@ -75,39 +68,8 @@ export class UserService{//extends BehaviorSubject<GridDataResult>
       const url = `${this.usersUrl}/search/${term}`;
       console.log(url);
       return this.http
-                 .get(url)//`api/users/?username=${term}`
+                 .get(url)
                  .map(response => response.json().Users);
     }
 
-
-    // getAll() {
-    //     return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());
-    // }
-    //
-    // getById(id: number) {
-    //     return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-    // }
-
-    // create(user: USER) {
-    //     return this.http.post('/api/users', user, this.jwt()).map((response: Response) => response.json());
-    // }
-
-    // update(user: USER) {
-    //     return this.http.put('/api/users/' + user.id, user, this.jwt()).map((response: Response) => response.json());
-    // }
-    //
-    // delete(id: number) {
-    //     return this.http.delete('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-    // }
-    //
-    // // private helper methods
-    //
-    // private jwt() {
-    //     // create authorization header with jwt token
-    //     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    //     if (currentUser && currentUser.token) {
-    //         let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-    //         return new RequestOptions({ headers: headers });
-    //     }
-    // }
 }

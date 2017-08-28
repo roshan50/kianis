@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="wraper">
+
+    <div class="header">
+      <img src="../../assets/images/kiyanis2.png" />
+      <div class="header-div">
+        <span class='curUser'>شما با نام کاربری  {{currentUser.username}} وارد شده اید!</span>
+        <p><a [routerLink]="['/login']">خروج</a></p>
+      </div>
+      <app-main-menu></app-main-menu>
+    </div>
+
+    <div class="main">
+      <div class="sidebar">
+        <app-user-list></app-user-list>
+      </div>
+
+    <div class="content">
+        <router-outlet  name='aux'></router-outlet>
+    </div>
+
+  </div>
+
+  </div>
+</div>

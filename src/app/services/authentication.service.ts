@@ -3,12 +3,14 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
+import { config } from '../config';
+
 @Injectable()
 export class AuthenticationService {
     constructor(private http: Http) { }
 
     login(username: string, password: string) {
-        return this.http.post('http://localhost:7002/api/login',{ username: username, password: password } )//JSON.stringify({ username: username, password: password })
+        return this.http.post(config.apiUrl+'login',{ username: username, password: password } )//JSON.stringify({ username: username, password: password })
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
                 let res = response.json();

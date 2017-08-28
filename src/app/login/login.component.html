@@ -6,24 +6,41 @@
 <div class="page-container">
     <h1>ورود به سیستم</h1>
     <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-       <input type="text" name="username" class="username" placeholder="نام کاربری">
-       <input type="password" name="password" class="password" placeholder="رمز عبور">
-       <button type="submit">وارد شوید</button>
-       <button type="submit">رمز ورود را فراموش کردم</button>
-       <div class="error"><span>+</span></div>
+
+       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="username">نام کاربری: </label>
+            <input type="text" class="form-control username" name="username" [(ngModel)]="model.username" #username="ngModel" required placeholder="نام کاربری" />
+            <label *ngIf="f.submitted && !username.valid" class="error-block">نام کاربری الزامی است</label>
+       </div>
+
+       <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+            <label for="password">رمز عبور: </label>
+            <input type="password" class="form-control password" name="password" [(ngModel)]="model.password" #password="ngModel" required placeholder="رمز عبور"/>
+            <label *ngIf="f.submitted && !password.valid" class="error-block">رمز عبور الزامی است</label>
+        </div>
+
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && missmatch }">
+            <div *ngIf="f.submitted && missmatch" class="error-block">نام کاربری یا رمز عبور اشتباه است</div>
+        </div>
+
+       <button type="submit" [disabled]="loading" >وارد شوید</button>
+       <a [routerLink]="['/reset-password']">رمز ورود را فراموش کردم</a>
+       <img *ngIf="loading" src="../../assets/images/progress.gif" />
     </form>
 
-   <div class="connect">
-       <p>ورود سریع با شبکه های اجتماعی</p>
-       <p>
-           <a class="facebook" href=""></a>
-           <a class="twitter" href=""></a>
-       </p>
-   </div>
+    <div class="connect">
+        <p>ورود سریع با شبکه های اجتماعی</p>
+        <p>
+            <a class="facebook" href=""></a>
+            <a class="twitter" href=""></a>
+        </p>
+    </div>
 </div>
-
-       <!-- Javascript -->
-       <script src="../../assets/js/jquery-1.8.2.min.js"></script>
-       <script src="../../assets/js/supersized.3.2.7.min.js"></script>
-       <script src="../../assets/js/supersized-init.js"></script>
-       <script src="../../assets/js/scripts.js"></script>
+<!-- slide background images................ -->
+<div class="crossfade">
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+</div>

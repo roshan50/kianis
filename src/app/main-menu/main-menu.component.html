@@ -1,0 +1,7 @@
+
+  <nav>
+    <!-- <a routerLink="/" routerLinkActive="active">خانه</a> -->
+    <a routerLink="/login" routerLinkActive="active" *ngIf="!currentUser">ورود</a>
+    <a routerLink="/dashboard" routerLinkActive="active" *ngIf="currentUser">دشبورد</a>
+    <a routerLink="/profile" routerLinkActive="active" *ngIf="currentUser">پروفایل</a>
+  </nav>

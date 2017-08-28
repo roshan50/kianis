@@ -1,0 +1,41 @@
+.container{
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+.wraper{
+  width: 100%;
+
+}
+.header{
+  background-color: #803689;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #A887A8;
+  box-shadow: 0 2px 1px #B887B8;
+  padding: 5px;
+}
+.header-div{
+    padding: 5px;
+}
+.curUser{
+  font-size: 15px;
+}
+
+.main{
+  width: 100%;
+  display: flex;
+  padding: 4px;
+}
+.sidebar{
+  background-color: #803689;
+  width: 30%;
+  padding: 5px;
+}
+.content{
+  box-shadow: 2px 0 1px #B887B8;
+  margin-right: 2px;
+  background-color: #A887A8;
+  padding: 10px;
+  width: 70%;
+}
