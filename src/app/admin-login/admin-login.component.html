@@ -1,0 +1,50 @@
+<div class="page login-page">
+      <div class="container">
+        <div class="form-outer text-center d-flex align-items-center justify-content-center">
+          <div class="form-inner">
+            <div class="logo text-uppercase"><span>ورود به پنل مدیریتی </span><strong class="text-primary">کیانیس</strong></div>
+
+            <form id="login-form" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+
+              <div class="form-group">
+                <label for="login-username" class="label-custom">نام کاربری</label>
+                <input id="login-username" type="text" name="loginUsername" class="form-control username" name="username" [(ngModel)]="model.username" #username="ngModel" required>
+              </div>
+
+              <div class="form-group">
+                <label for="login-password" class="label-custom">رمز عبور</label>
+                <input id="login-password" type="password" name="loginPassword" [(ngModel)]="model.password" #password="ngModel" required>
+              </div>
+
+              <button type="submit" id="login" class="btn btn-primary">ورود</button>
+              <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+            </form>
+
+            <a href="#" class="forgot-pass">رمز عبور را فراموش کردم</a>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Javascript files-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="./assets/bootstrap-dashboard/js/tether.min.js"></script>
+  <script src="./assets/bootstrap-dashboard/js/bootstrap.min.js"></script>
+  <script src="./assets/bootstrap-dashboard/js/jquery.cookie.js"> </script>
+  <script src="./assets/bootstrap-dashboard/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+  <script src="./assets/bootstrap-dashboard/js/jquery.nicescroll.min.js"></script>
+  <script src="./assets/bootstrap-dashboard/js/jquery.validate.min.js"></script>
+  <script src="./assets/bootstrap-dashboard/js/front.js"></script>
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.-->
+  <!---->
+  <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-XXXXX-X');ga('send','pageview');
+  </script>

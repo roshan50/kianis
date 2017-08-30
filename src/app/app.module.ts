@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { routing } from './app.routing';
 import { AuthGuard } from './auth.guard';
+import { AdminAuthGuard } from './admin.auth.guard';
 
 import { AuthenticationService } from './services/authentication.service';
 import { UserService } from './services/user.service';
@@ -19,6 +20,13 @@ import { ProfileComponent } from './profile/profile.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+
+
+import { EqualValidator } from './shared/equal-validator.directive';
 
 @NgModule({
   declarations: [
@@ -32,6 +40,11 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     UserSearchComponent,
     MainMenuComponent,
     ResetPasswordComponent,
+    AdminLoginComponent,
+    AdminHomeComponent,
+    AdminDashboardComponent,
+    AdminProfileComponent,
+    EqualValidator ,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +54,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
   ],
   providers: [
     AuthGuard,
+    AdminAuthGuard,
     UserService,
     AuthenticationService,
   ],
