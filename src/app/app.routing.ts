@@ -11,6 +11,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AdminResetPasswordComponent } from './admin-reset-password/reset-password.component';
 
 import { AuthGuard } from './auth.guard';
 import { AdminAuthGuard } from './admin.auth.guard';
@@ -35,11 +36,11 @@ const appRoutes: Routes = [
 
 
 //........................................................................................................
-    { path: 'administrator', component: AdminLoginComponent, children: [
+    { path: 'administrator', children: [
           { path: '', component: AdminLoginComponent },
           { path: 'login', component: AdminLoginComponent},
-          // { path: 'reset-password', component: AdminResetPasswordComponent},
-          // { path: 'reset-password/:token', component: AdminResetPasswordComponent},
+          { path: 'reset-password', component: AdminResetPasswordComponent},
+          { path: 'reset-password/:token', component: AdminResetPasswordComponent},
     ]},
 
     // { path: 'administrator', component: AdminHomeComponent, canActivate: [AdminAuthGuard], children: [

@@ -24,6 +24,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AdminResetPasswordComponent } from './admin-reset-password/reset-password.component';
 
 
 import { EqualValidator } from './shared/equal-validator.directive';
@@ -44,6 +45,7 @@ import { EqualValidator } from './shared/equal-validator.directive';
     AdminHomeComponent,
     AdminDashboardComponent,
     AdminProfileComponent,
+    AdminResetPasswordComponent,
     EqualValidator ,
   ],
   imports: [
